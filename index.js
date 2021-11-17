@@ -12,7 +12,7 @@ app.post('/test', (req, res) => {
   
 
 });
-app.get('/test', async (req, res) => {
+app.get('/test', (req, res) => {
   const timestamp = req.body.timestamp;
   const id = req.body.id;
   // const time = await unixConverter(timestamp);
