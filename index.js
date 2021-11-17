@@ -2,7 +2,7 @@ const schedule = require('node-schedule');
 const express = require('express');
 const { request } = require('express');
 const app = express()
-const port = process.env.Port || 4000;
+const port =  4000;
 app.use(express.json())
 
 app.post('/test', (req, res) => {
