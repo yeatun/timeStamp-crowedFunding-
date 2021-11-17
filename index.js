@@ -11,8 +11,11 @@ app.post('/test', (req, res) => {
   res.send(`Your  ${id} and ${timestamp} has been posted`)
   
 
+ 
+  
+
 });
-app.get('/test', (req, res) => {
+app.get('/test', async (req, res) => {
   const timestamp = req.body.timestamp;
   const id = req.body.id;
   // const time = await unixConverter(timestamp);
@@ -28,9 +31,9 @@ app.get('/test', (req, res) => {
 
   });
 })
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 app.listen(process.env.PORT || port)
 // app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`)
