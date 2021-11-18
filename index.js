@@ -13,6 +13,7 @@ app.post('/test', (req, res) => {
   // console.log(time);
   //const timeString = new Date(timestamp);
   const timeStringISO = new Date(timestamp*1000);
+ 
   givenId = id;
   givenTimestamp = timeStringISO;
   console.log(timeStringISO);
@@ -25,8 +26,9 @@ app.get('/test', async (req, res) => {
   const timestamp = givenTimestamp;
   const id = givenId;
   schedule.scheduleJob(timestamp, function(){
-    console.log(`Your id is : ${id} and time is ${timestamp}`);
-      res.send(`Your id is : ${id} and time is ${timestamp}`);
+    const current = new Date();
+    console.log(`Your id is : ${id} and time is ${timestamp} and current date: ${current}`);
+      res.send(`Your id is : ${id} and time is ${timestamp} and current date: ${current}`);
  
   });
  
