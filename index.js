@@ -25,7 +25,7 @@ app.get('/test', async (req, res) => {
   const timestamp = givenTimestamp;
   const id = givenId;
   schedule.scheduleJob(timestamp, function(){
-    console.log(`Your id is : ${id} and time is ${timeStringISO}`);
+    console.log(`Your id is : ${id} and time is ${timestamp}`);
       res.send(`Your id is : ${id} and time is ${timestamp}`);
  
   });
